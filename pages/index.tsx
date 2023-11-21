@@ -1,7 +1,7 @@
 import { Card, CardActionArea, CardMedia, Grid, Typography } from '@mui/material'
 import { ShopLayout } from '../components/layouts'
 
-import { initialData } from '../public/products'
+import { initialData } from '../database/products'
 
 
 export default function Home() {
