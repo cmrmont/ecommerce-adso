@@ -42,11 +42,11 @@ const OrdenPage = () => {
                 </NextLink>
               </Box>
 
-              <Typography>Andres Reyes</Typography>
-              <Typography>Carrera 2</Typography>
-              <Typography>Los pinos</Typography>
+              <Typography>Camilo Montero</Typography>
+              <Typography>Calle 130c</Typography>
+              <Typography>Suba</Typography>
               <Typography>Colombia</Typography>
-              <Typography>+57 312 542 5425</Typography>
+              <Typography>+57 310 774970</Typography>
 
               <Divider sx={{ my: 1 }} />
               <Box display='flex' justifyContent='end'>
