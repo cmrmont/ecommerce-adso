@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-/**estados de mi conexión a la db 
+/* estados de mi conexión a la db 
 0 = disconnected
 1 = connected
 2 = connecting
@@ -22,16 +22,21 @@ export const connect = async () => {
     mongoConnection.isConnected = mongoose.connections[0].readyState;
 
     if (mongoConnection.isConnected === 1) {
-      console.log('Usuando conexion anterior');
+      console.log('Usando conexión anterior');
       return;
     }
 
     await mongoose.disconnect();
   }
 
-  await mongoose.connect(process.env.MONGO_URL || '');
+  const mongoURI = 'mongodb://localhost:27017/ecommercedb'; // Reemplazar con el nombre de mi base de datos
+
+  await mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
   mongoConnection.isConnected = 1;
-  console.log('Conectado a MongoDB:', process.env.MONGO_URL);
+  console.log('Conectado a MongoDB:', mongoURI);
 };
 
 export const disconnect = async () => {
